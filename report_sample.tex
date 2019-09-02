@@ -1,0 +1,59 @@
+\documentclass[11pt,a4paper]{jsarticle}
+\usepackage{amsmath,amssymb}
+\usepackage{newtxtext,newtxmath}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx]{color}
+\usepackage{listings}
+\lstset{%
+ language={python},
+ % backgroundcolor={\color[gray]{.95}},%
+ tabsize=2, % tab space width
+ showstringspaces=false, % don't mark spaces in strings
+ basicstyle={\ttfamily},%
+ %identifierstyle={\small},%
+ commentstyle={\itshape},%
+ keywordstyle={\bfseries},%
+ %ndkeywordstyle={\small},%
+ stringstyle={\ttfamily},
+ %frame={tb},
+ breaklines=true,
+ columns=[l]{fullflexible},%
+ % numbers=left,%
+ % numberstyle={\small},%
+ xrightmargin=0zw,%
+ %xleftmargin=3zw,%
+ stepnumber=1,
+ numbersep=1zw,%
+ lineskip=-0.5ex%
+}
+
+
+\title{report}
+\author{氏 名： Matts966}
+\date{\today}
+%
+\begin{document}
+\maketitle
+%
+\section{
+  作成したプログラムとその目的について
+}
+今回作成したプログラムは、三目並べを解くことを目的として、DoubleDQN（Deep Q Network）と
+呼ばれる学習手法を、ChainerRLというライブラリを用いて実装し、Minimax法と簡単なコツを利用
+したアルゴリズムと戦わせる、というものである。
+添付したNumpy形式のログにもあるように、30万回強の学習回数でも、学習は収束せず、簡単なアルゴ
+リズムにもまけることがある、ということがわかった。
+ただ、そもそも置けない場所を選択肢に含め、それを選んだ場合にMissとして処理するという計測方法
+は、条件が厳しかったかもしれない。
+機械学習も、目的や細かい実装によっては、思い通りの結果を出すことができない、ということの例には
+なるかもしれない。
+最後には、実際に自分の手で遊んで、学習の度合を確かめられるようになっている。
+以下はそのプログラムである。
+
+\subsection{プログラム}
+\label{sec:prog-list1}
+
+
+\lstinputlisting[numbers=left,numberstyle=\ttfamily,xleftmargin=2zw]{dqn.py}
+
+\end{document}
